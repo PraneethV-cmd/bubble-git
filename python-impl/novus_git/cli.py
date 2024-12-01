@@ -1,4 +1,5 @@
 import os 
+import sys 
 import argparse
 from . import data 
 
@@ -32,6 +33,17 @@ def parse_args():
     hash_object_parser.set_defaults(func=hash_object)
     hash_object_parser.add_argument('file')
 
+    '''
+    there is a command in git namely 'cat-file' which does the opposite compared to 
+    hash-object, where we print the file that is attirbuted to the hash 
+    for eg if the file is say sample.txt and the hash of it is asd123 
+    with hash-object we get the asd123 value but with the cat-file we get the name of the file that is attributed to the hash which is sample.txt
+    '''
+
+    cat_file_parser = commands.add_parser('cat-file')
+    cat_file_parser.set_defaults(func=cat_file)
+    cat_file_parser.add_argument('object')
+
     return parser.parse_args() 
 
 def init(args):
@@ -41,3 +53,8 @@ def init(args):
 def hash_object(args):
     with open (args.file, 'rb') as f:
         print(data.hash_object(f.read()))
+
+
+def cat_file(args):
+    sys.stdout.flush()
+    sys.stdout.buffer.write(data.get_object(args.object))
