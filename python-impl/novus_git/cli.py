@@ -54,6 +54,10 @@ def parse_args():
         help="Directory to write as a tree (default: current directory)"
     )
 
+    read_tree_parser = commands.add_parser('read-tree')
+    read_tree_parser.set_defaults(func=read_tree)
+    read_tree_parser.add_argument('tree')
+
     return parser.parse_args() 
 
 def init(args):
@@ -72,4 +76,7 @@ def cat_file(args):
 
 def write_tree(args):
     print(base.write_tree())
+
+def read_tree(args):
+    base.read_tree(args.tree)
 
