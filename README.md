@@ -91,7 +91,4 @@ For planned commands like `commit`, `log`, `branch`, and `checkout`, stay tuned 
 - Rewrite the entire implementation in Rust for better performance.
 - Add comprehensive tests and documentation.
 
----
 
-## **License**
-This project is licensed under the MIT License. See the `LICENSE` file for details.
