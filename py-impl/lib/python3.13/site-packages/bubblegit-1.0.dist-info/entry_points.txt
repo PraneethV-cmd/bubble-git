@@ -1,0 +1,2 @@
+[console_scripts]
+bubblegit = bubblegit.cli:main
