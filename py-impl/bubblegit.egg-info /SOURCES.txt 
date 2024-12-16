@@ -1,0 +1,9 @@
+setup.py
+bubblegit/base.py
+bubblegit/cli.py
+bubblegit/data.py
+bubblegit.egg-info/PKG-INFO
+bubblegit.egg-info/SOURCES.txt
+bubblegit.egg-info/dependency_links.txt
+bubblegit.egg-info/entry_points.txt
+bubblegit.egg-info/top_level.txt
